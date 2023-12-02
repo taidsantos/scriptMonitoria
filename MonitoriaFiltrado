@@ -1,0 +1,31 @@
+ import requests
+ import pandas as pd
+ import datetime, re,time
+ from datetime import date
+ import numpy as np
+ import json,unidecode
+ import matplotlib.pyplot as plt
+ from pyhive import presto,trino
+ import pandas as pd
+ import getpass
+ import random
+ 
+ pd.set_option('display.max_columns', None)
+ 
+ df_interacoes = pd.read_excel('interacoes.xlsx')
+ 
+ agente = str(input("Qual geek será monitorado?  \n"))
+ monitorado = agent
+ 
+ df_monitorado = df_interacoes.loc[(df_interacoes['AgenteId'] == monitorado)]
+ 
+ df_monitorado.reset_index(inplace=True)
+ 
+ x = random.randint(0,len(df_monitorado))
+ 
+ filtered_df = df_monitorado[(df_monitorado.index == x)]
+ 
+ monitoria = filtered_df.filter(items=['Id conversa','Data', 'Agente', 'Supervisor','Canal','Finalização'])
+ 
+ print('\n')
+ print(monitoria)
